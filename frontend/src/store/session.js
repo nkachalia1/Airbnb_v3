@@ -43,7 +43,7 @@ export const restoreSession = () => async dispatch => {
   const data = await response.json();
   storeCurrentUser(data.user);
   dispatch(setCurrentUser(data.user));
-  console.log(data)
+  // console.log(data)
   return response;
 };
 
@@ -70,7 +70,7 @@ export const signup = (user) => async (dispatch) => {
 //   user: JSON.parse(sessionStorage.getItem("currentUser"))
 // };
 const storedUserData = sessionStorage.getItem("currentUser");
-console.log("Stored User Data:", storedUserData);
+// console.log("Stored User Data:", storedUserData);
 
 const initialState = {
   user: JSON.parse(storedUserData)
