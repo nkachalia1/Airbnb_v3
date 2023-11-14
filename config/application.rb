@@ -18,7 +18,7 @@ require "action_cable/engine"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module AirbnbV3
+module Airbnb
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
@@ -38,7 +38,7 @@ module AirbnbV3
 
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore,
-      key: '_auth_me_session',
+      key: '_air_bnb_session',
       same_site: :lax,
       secure: Rails.env.production?
   end
