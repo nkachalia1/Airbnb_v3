@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    has_many :listings
+
     before_validation :ensure_session_token
     attr_reader :password
     has_secure_password
