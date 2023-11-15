@@ -25,4 +25,22 @@ ApplicationRecord.transaction do
     end
 
     puts "Done!"
+
+    Listing.create!(
+      title: 'Listing1',
+      description: 'this is the description',
+      price: '100',
+      beds: '2',
+      baths: '2'
+    )
+
+    10.times do
+      Listing.create!({
+        title: Faker::Internet.unique.title(specifier: 3),
+        description: Faker::Internet.unique.description,
+        price: '500',
+        beds: '5',
+        baths: '4'
+      })
+    end
 end
