@@ -31,7 +31,9 @@ ApplicationRecord.transaction do
       description: 'this is the description',
       price: '100',
       beds: '2',
-      baths: '2'
+      baths: '2',
+      lat: '40.760535',
+      lng: '-73.996376'
     )
 
     10.times do
@@ -40,7 +42,9 @@ ApplicationRecord.transaction do
         description: Faker::Internet.unique.description,
         price: '500',
         beds: '5',
-        baths: '4'
+        baths: '4',
+        lat: '40.760535',
+        lng: '-73.996376'
       })
     end
 end
