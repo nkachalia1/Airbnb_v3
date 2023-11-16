@@ -21,13 +21,35 @@ function Navigation() {
     );
   }
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    const dropdown = document.querySelector("#dropdown");
+
+    // Toggle visibility
+    if (dropdown.style.display === "block") {
+      dropdown.style.display = "none";
+    } else {
+      dropdown.style.display = "block";
+    }
+  }
+
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
-        {sessionLinks}
-      </li>
-    </ul>
+    <header id='navbar'>
+
+      <NavLink exact to="/">
+        <img id='logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/1024px-Airbnb_Logo_B%C3%A9lo.svg.png?20230603231949'>
+        </img>
+      </NavLink>
+
+      <div id='right_profile_button' onClick={handleClick}>
+        = O
+        <div id='dropdown'>
+          <NavLink to="/login">Log In</NavLink>
+          <NavLink to="/signup">Sign Up</NavLink>
+        </div>
+      </div>
+
+    </header>
   );
 }
 
