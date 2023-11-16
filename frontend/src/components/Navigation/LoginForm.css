@@ -1,0 +1,13 @@
+.modal {
+    position: absolute;
+    margin: auto;
+    border: 1px solid red;
+    top: 30%;
+    height: 200px;
+}
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid green;
+}

@@ -32,3 +32,26 @@
     top: 100%;
     right: 0;
 }
+
+/* CSS */
+.auth-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff; /* Change as needed */
+    border: 1px solid #ccc; /* Change border styles */
+    padding: 10px;
+    border-radius: 10px; /* Make the box rounded */
+    width: 200px; /* Adjust the width as needed */
+    margin-top: 10px; /* Add margin to shift the container down */
+  }
+
+  .auth-links a {
+    text-decoration: none;
+    color: #333; /* Link text color */
+    margin: 8px 0; /* Adjust spacing between links */
+  }
+
+  .auth-links a:hover {
+    color: #ff0000; /* Change link color on hover */
+  }

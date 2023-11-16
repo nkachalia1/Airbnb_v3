@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
+import LoginModal from './login_modal';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
@@ -33,6 +34,16 @@ function Navigation() {
     }
   }
 
+  const [isOpen, setisOpen] = useState(false);
+
+  const openModal = (e) => {
+    setisOpen(true);
+  }
+
+  const closeModal = (e) => {
+    setisOpen(false);
+  }
+
   return (
     <header id='navbar'>
 
@@ -44,11 +55,16 @@ function Navigation() {
       <div id='right_profile_button' onClick={handleClick}>
         = O
         <div id='dropdown'>
-          <NavLink to="/login">Log In</NavLink>
-          <NavLink to="/signup">Sign Up</NavLink>
+          {/* Container for login and sign-up links */}
+          <div className='auth-links'>
+            <div id='login' onClick={openModal}>
+              Login
+            </div>
+          </div>
         </div>
       </div>
 
+      <LoginModal isOpen={isOpen} onClose={closeModal}/>
     </header>
   );
 }
