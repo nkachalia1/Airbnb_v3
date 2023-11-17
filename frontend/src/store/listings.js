@@ -7,3 +7,6 @@ export const fetchListings = () => async dispatch => {
         // dispatch(receivePosts(fetchedPosts)); // same as dispatch(type: RECEIVE_POSTS key: fetchedPosts)
     }
 }
+
+
+// add listingsReducer here

@@ -38,8 +38,8 @@ ApplicationRecord.transaction do
 
     10.times do
       Listing.create!({
-        title: Faker::Internet.unique.title(specifier: 3),
-        description: Faker::Internet.unique.description,
+        title: Faker::Travel::TrainStation.name(region: 'united_kingdom', type: 'metro'),
+        description: "this is the description",
         price: '500',
         beds: '5',
         baths: '4',

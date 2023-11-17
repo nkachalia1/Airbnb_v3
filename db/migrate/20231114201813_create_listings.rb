@@ -9,8 +9,9 @@ class CreateListings < ActiveRecord::Migration[7.0]
       t.float :lat, null: false
       t.float :lng, null: false
       t.timestamps
+      # add location, price, ratings, image_url
     end
 
-    add_index :users, :title, unique: true
+    add_index :listings, :title, unique: true
   end
 end

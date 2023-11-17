@@ -3,7 +3,7 @@ class Api::ListingsController < ApplicationController
 
     def index
       @listings = Listing.all
-      render json: @listings
+      render :index
     end
 
     def create

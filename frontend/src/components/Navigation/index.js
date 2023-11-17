@@ -44,6 +44,10 @@ function Navigation() {
     setisOpen(false);
   }
 
+  const currentUser = useSelector(state => {
+    return state.session.user;
+  });
+
   return (
     <header id='navbar'>
 
@@ -56,11 +60,13 @@ function Navigation() {
         = O
         <div id='dropdown'>
           {/* Container for login and sign-up links */}
-          <div className='auth-links'>
-            <div id='login' onClick={openModal}>
-              Login
-            </div>
-          </div>
+          {
+            !currentUser && <div className='auth-links'>
+                <div id='login' onClick={openModal}>
+                  Login
+                </div>
+              </div>
+          }
         </div>
       </div>
 
