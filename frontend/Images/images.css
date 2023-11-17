@@ -1,0 +1,17 @@
+/* Basic styles for the grid layout */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .grid-item {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
