@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import "./images.css";
 
 function ImageGrid() {
+    debugger
     const listings = useSelector(state => {
         return Object.values(state.listings);
     });
