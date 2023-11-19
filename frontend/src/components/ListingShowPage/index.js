@@ -14,11 +14,11 @@ const ListingShow = ({ listing, listingId, fetchListing, reviews }) => {
     [listingId]: listing
   };
 
-  const {listingId} = useParams();
+  const {id} = useParams();
   const dispatch = useDispatch();
   useEffect( () => {
-    dispatch(fetchListing(listingId))
-  }, [listingId]);
+    dispatch(fetchListing(id))
+  }, [id]);
 
   return(
     <div className="single-listing-show">
