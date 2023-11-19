@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect, Dispatch } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 // import ListingDetail from './listing_detail';
 // import ListingMap from '../listing_map/listing_map';
@@ -11,6 +13,12 @@ const ListingShow = ({ listing, listingId, fetchListing, reviews }) => {
   const listings = {
     [listingId]: listing
   };
+
+  const {listingId} = useParams();
+  const dispatch = useDispatch();
+  useEffect( () => {
+    dispatch(fetchListing(listingId))
+  }, [listingId]);
 
   return(
     <div className="single-listing-show">
