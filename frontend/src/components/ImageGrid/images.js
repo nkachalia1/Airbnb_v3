@@ -20,8 +20,8 @@ export const makeSelectListings = createSelector(
 );
 
 function ImageGrid() {
-    const listings = useSelector(makeSelectListings);
     const dispatch = useDispatch();
+    const listings = useSelector(makeSelectListings);
 
     useEffect( () => {
         dispatch(fetchListings());
@@ -35,9 +35,8 @@ function ImageGrid() {
                         <a href="#">
                             <img src="https://foyr.com/learn/wp-content/uploads/2021/08/design-your-dream-home.jpg" alt={`Image ${listing.id}`} />
                             {/* Add columns of location, price, and rating */}
-                            <p>Location: {listing.location}</p>
-                            <p>Price: {listing.price}</p>
-                            <p>Rating: {listing.rating}</p>
+                            <p>{listing.title}</p>
+                       y     <p>Rating: {listing.rating}</p>
                         </a>
                     </div>
                 ))
