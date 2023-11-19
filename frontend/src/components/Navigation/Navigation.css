@@ -106,3 +106,45 @@
   .auth-links a:hover {
     color: #ff0000; /* Change link color on hover */
   }
+
+/* Updated styles for the calendar button */
+#calendar_btn {
+  /* Calendar button container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background-color: #FF5A5F;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+  position: relative;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+#calendar_btn::before {
+  /* Pseudo-element for the hover effect */
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%; /* Make it larger than the button */
+  height: 300%; /* Make it larger than the button */
+  background-color: rgba(255, 255, 255, 0.1); /* Adjust overlay color */
+  transition: all 0.3s ease;
+  border-radius: 50%; /* Ensure a circular effect */
+  transform: translate(-50%, -50%) scale(0); /* Initially hidden */
+}
+
+#calendar_btn:hover::before {
+  /* Hover effect for the pseudo-element */
+  transform: translate(-50%, -50%) scale(2); /* Increase size */
+}
+
+#calendar_btn:hover {
+  /* Adjusted hover effect for the calendar button */
+  background-color: #E84855;
+}

@@ -54,8 +54,7 @@ export const fetchListings = () => async dispatch => {
 
     if (response.ok) {
         const fetchedListings = await response.json();
-        console.log(fetchedListings);
-        // dispatch(receivePosts(fetchedPosts)); // same as dispatch(type: RECEIVE_POSTS key: fetchedPosts)
+    dispatch(receiveListings(fetchedListings));
     }
 }
 
