@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import BenchDetail from './bench_detail';
-import BenchMap from '../bench_map/bench_map';
-import ReviewFormContainer from './review_form_container';
-import { ProtectedRoute } from '../../util/route_util';
-import { ReviewLink } from '../../util/link_util';
+// import ListingDetail from './listing_detail';
+// import ListingMap from '../listing_map/listing_map';
+// import ReviewFormContainer from './review_form_container';
+// import { ProtectedRoute } from '../../util/route_util';
+// import { ReviewLink } from '../../util/link_util';
 
 const ListingShow = ({ listing, listingId, fetchListing, reviews }) => {
   const listings = {
