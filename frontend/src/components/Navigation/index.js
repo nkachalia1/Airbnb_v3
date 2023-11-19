@@ -52,27 +52,32 @@ function Navigation() {
     <header id='navbar'>
 
       <NavLink exact to="/">
-        <img id='logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/1024px-Airbnb_Logo_B%C3%A9lo.svg.png?20230603231949'>
-        </img>
+        <img id='logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/1024px-Airbnb_Logo_B%C3%A9lo.svg.png?20230603231949' alt="Airbnb Logo" />
       </NavLink>
 
       <div id='right_profile_button' onClick={handleClick}>
-        = O
-        <div id='dropdown'>
-          {/* Container for login and sign-up links */}
-          {
-            !currentUser && <div className='auth-links'>
-                <div id='login' onClick={openModal}>
-                  Login
-                </div>
+        {/* Replace the text "Profile" with the image */}
+        <div className="menu-icon"></div>
+        {/* Use the src attribute directly in the img tag */}
+        <img src="frontend/src/components/Navigation/bnb_icon.png" className="profile-pic" />
+      </div>
+      <div id='dropdown'>
+        {/* Container for login and sign-up links */}
+        {
+          !currentUser && (
+            <div className='auth-links'>
+              <div id='login' onClick={openModal}>
+                Login
               </div>
-          }
-        </div>
+            </div>
+          )
+        }
       </div>
 
       <LoginModal isOpen={isOpen} onClose={closeModal}/>
     </header>
   );
+
 }
 
 export default Navigation;

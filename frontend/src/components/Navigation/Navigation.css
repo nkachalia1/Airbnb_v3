@@ -12,7 +12,7 @@
     width: 100%;
 }
 
-#right_profile_button {
+/* #right_profile_button {
     border-radius: 50px;
     padding: 10px 20px;
     background-color: white;
@@ -24,7 +24,58 @@
 
 #right_profile_button:hover {
     box-shadow: 0 3px 5px 5px black;
+} */
+
+#right_profile_button {
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  padding: 10px 20px;
+  background-color: white;
+  border: 1px solid gray;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
 }
+
+.menu-icon {
+  width: 20px;
+  height: 2px;
+  background-color: #333; /* Color for the lines */
+  position: relative;
+  margin-right: 5px;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #333; /* Color for the lines */
+}
+
+.menu-icon::before {
+  top: -8px;
+}
+
+.menu-icon::after {
+  bottom: -8px;
+}
+
+.profile-pic {
+  width: 30px; /* Adjust size as needed */
+  height: 30px; /* Adjust size as needed */
+  border-radius: 50%; /* To create a circular shape */
+  object-fit: cover; /* Maintain aspect ratio */
+  margin-left: 5px; /* Adjust spacing between icon and profile picture */
+}
+
+#right_profile_button:hover {
+  background-color: white; /* Darker shade of the brand color on hover */
+  box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.3); /* Adjusted box shadow for a subtle effect */
+}
+
 
 #dropdown {
     display: none;
