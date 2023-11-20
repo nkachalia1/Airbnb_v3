@@ -32,8 +32,9 @@ ApplicationRecord.transaction do
       price: '100',
       beds: '2',
       baths: '2',
-      lat: '40.760535',
-      lng: '-73.996376'
+      location: 'New York',
+      rating: '4.5',
+      image_url: ''
     )
 
     10.times do
@@ -43,8 +44,9 @@ ApplicationRecord.transaction do
         price: '500',
         beds: '5',
         baths: '4',
-        lat: '40.760535',
-        lng: '-73.996376'
+        location: 'San Francisco',
+        rating: '4.7',
+        image_url: ''
       })
     end
 end

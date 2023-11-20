@@ -24,15 +24,15 @@ const ListingShow = ({ listing, listingId, fetchListing, reviews }) => {
     <div className="single-listing-show">
       <div className="single-listing-map">
         <Link to="/">Back to Listings Index</Link>
-        <ListingMap
+        {/* <ListingMap
           listings={listings}
           listingId={listingId}
           singleListing={true}
           fetchListing={fetchListing}
-        />
+        /> */}
       </div>
       <div className="right-half listing-details">
-        <ListingDetail listing={listing} reviews={reviews} />
+        {/* <ListingDetail listing={listing} reviews={reviews} />
         <ReviewLink
           component={ReviewFormContainer}
           to={`/listings/${listingId}/review`}
@@ -41,7 +41,7 @@ const ListingShow = ({ listing, listingId, fetchListing, reviews }) => {
         <ProtectedRoute
           path="/listings/:listingId/review"
           component={ReviewFormContainer}
-        />
+        /> */}
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import LoginModal from './login_modal';
+import SignUpModal from './signup_modal';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
@@ -34,14 +35,21 @@ function Navigation() {
     }
   }
 
-  const [isOpen, setisOpen] = useState(false);
+  const [loginOpen, setloginOpen] = useState(false);
+  const [signupOpen, setsignupOpen] = useState(false);
 
-  const openModal = (e) => {
-    setisOpen(true);
+  const openLogin = (e) => {
+    setloginOpen(true);
+    setsignupOpen(false);
+  }
+  const openSignup = (e) => {
+    setsignupOpen(true);
+    setloginOpen(false);
   }
 
   const closeModal = (e) => {
-    setisOpen(false);
+    setsignupOpen(false);
+    setloginOpen(false);
   }
 
   const currentUser = useSelector(state => {
@@ -59,22 +67,26 @@ function Navigation() {
         {/* Replace the text "Profile" with the image */}
         <div className="menu-icon"></div>
         {/* Use the src attribute directly in the img tag */}
-        <img src="frontend/src/components/Navigation/bnb_icon.png" className="profile-pic" />
-      </div>
-      <div id='dropdown'>
-        {/* Container for login and sign-up links */}
-        {
-          !currentUser && (
-            <div className='auth-links'>
-              <div id='login' onClick={openModal}>
-                Login
+        <i className="fa-solid fa-user-circle" style={{fontSize: "1.5rem"}}></i>
+        <div id='dropdown'>
+          {/* Container for login and sign-up links */}
+          {
+            !currentUser && (
+              <div className='auth-links'>
+                <div id='login' onClick={openLogin}>
+                  Login
+                </div>
+                <div id='signup' onClick={openSignup}>
+                  Sign Up
+                </div>
               </div>
-            </div>
-          )
-        }
+            )
+          }
+        </div>
       </div>
 
-      <LoginModal isOpen={isOpen} onClose={closeModal}/>
+      <LoginModal isOpen={loginOpen} onClose={closeModal}/>
+      <SignUpModal isOpen={signupOpen} onClose={closeModal}/>
     </header>
   );
 

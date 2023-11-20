@@ -78,6 +78,8 @@
 
 
 #dropdown {
+    border-radius: 4px;
+    padding: 0;
     display: none;
     position: absolute;
     top: 100%;
@@ -94,7 +96,17 @@
     padding: 10px;
     border-radius: 10px; /* Make the box rounded */
     width: 200px; /* Adjust the width as needed */
-    margin-top: 10px; /* Add margin to shift the container down */
+    margin-top: 1px; /* Add margin to shift the container down */
+  }
+
+  .auth-links div {
+    width: 100%;
+    padding: 10px 5px;
+    text-align: right;
+  }
+
+  .auth-links div:hover {
+    background-color: #ccc;
   }
 
   .auth-links a {

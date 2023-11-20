@@ -6,22 +6,23 @@ import { useDispatch } from 'react-redux';
 import { createSelector } from 'reselect';
 import { useSelector } from 'react-redux';
 
-const selectListingsData = state => state.listings
+// const selectListingsData = state => state.listings
 
-export const makeSelectListings = createSelector(
-    selectListingsData,
-    listings => {
-        if (listings) {
-            return Object.values(listings);
-        } else {
-            return [];
-        }
-    }
-);
+// export const makeSelectListings = createSelector(
+//     selectListingsData,
+//     listings => {
+//         if (listings) {
+//             return Object.values(listings);
+//         } else {
+//             return [];
+//         }
+//     }
+// );
 
 function ImageGrid() {
     const dispatch = useDispatch();
-    const listings = useSelector(makeSelectListings);
+    const listings = useSelector(state => state.listings || {});
+    const listings_array = Object.values(listings);
 
     useEffect( () => {
         dispatch(fetchListings());
@@ -30,7 +31,7 @@ function ImageGrid() {
     return (
         <div className="image-grid">
             {
-                listings.map(listing => (
+                listings_array.map(listing => (
                     <div className="grid-item" key={listing.id}>
                         <a href="#">
                             <img src="https://foyr.com/learn/wp-content/uploads/2021/08/design-your-dream-home.jpg" alt={`Image ${listing.id}`} />
