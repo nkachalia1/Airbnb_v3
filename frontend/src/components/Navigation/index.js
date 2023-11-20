@@ -46,7 +46,7 @@ function Navigation() {
     setsignupOpen(true);
     setloginOpen(false);
   }
-  
+
   const closeModal = (e) => {
     setsignupOpen(false);
     setloginOpen(false);
