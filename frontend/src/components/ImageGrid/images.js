@@ -29,21 +29,28 @@ function ImageGrid() {
     }, [dispatch]);
 
     return (
-        <div className="image-grid">
-            {
-                listings_array.map(listing => (
-                    <div className="grid-item" key={listing.id}>
-                        <a href={`/listings/${listing.id}`}>
-                            <img src="https://foyr.com/learn/wp-content/uploads/2021/08/design-your-dream-home.jpg" alt={`Image ${listing.id}`} />
-                            {/* Add columns of location, price, and rating */}
-                            <p>{listing.title}</p>
-                       y     <p>Rating: {listing.rating}</p>
-                        </a>
+        <div className="page-container">
+          <div className="image-grid">
+            {listings_array.map(listing => (
+              <div className="grid-item" key={listing.id}>
+                <a href={`/listings/${listing.id}`}>
+                  <img src={`https://airbnb-seeds.s3.amazonaws.com/${listing.id}.jpeg`} alt={`Image ${listing.id}`} />
+                  <div className="text-content">
+                    <div className="title-and-rating">
+                      <p className="title">{listing.title}</p>
+                      <p className="rating">
+                        {listing.rating} <span className="star">★</span>
+                      </p>
                     </div>
-                ))
-            }
+                    <p className="location">{listing.location}</p>
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
-    );
+      );
+
 
 }
 

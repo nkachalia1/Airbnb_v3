@@ -1,17 +1,69 @@
-/* Basic styles for the grid layout */
+/* Updated styles for the grid layout */
 .image-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-  }
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr)); /* Adjust the minimum width */
+  gap: 20px;
+  margin-top: 20px; /* Add some top margin */
+}
 
-  .grid-item {
-    border: 1px solid #ccc;
-    padding: 5px;
-    text-align: center;
-  }
+.grid-item {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+}
 
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+.grid-item:hover {
+  transform: translateY(-5px);
+}
+
+.grid-item a {
+  display: block;
+  text-decoration: none;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 200px; /* Adjust image height */
+  object-fit: cover;
+}
+
+.text-content {
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.title-and-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+}
+
+.rating {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  color: black;
+  margin-left: 5px;
+}
+
+.location {
+  margin: 0;
+  color: #777;
+}
+
+.page-container {
+  max-width: 1200px; /* Set your desired maximum width */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 0 20px; /* Add left and right padding for margins */
+}
