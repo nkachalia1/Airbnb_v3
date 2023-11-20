@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
-import LoginModal from './login_modal';
+import LoginModal from './LoginModal';
 import SignUpModal from './signup_modal';
 
 function Navigation() {

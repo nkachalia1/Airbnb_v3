@@ -101,8 +101,8 @@
 
   .auth-links div {
     width: 100%;
-    padding: 10px 5px;
-    text-align: right;
+    padding: 10px 0; /* Adjusted padding to center the text vertically */
+    text-align: center; /* Center-align the text */
   }
 
   .auth-links div:hover {
