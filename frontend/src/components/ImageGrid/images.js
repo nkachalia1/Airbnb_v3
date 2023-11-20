@@ -33,7 +33,7 @@ function ImageGrid() {
             {
                 listings_array.map(listing => (
                     <div className="grid-item" key={listing.id}>
-                        <a href="#">
+                        <a href={`/listings/${listing.id}`}>
                             <img src="https://foyr.com/learn/wp-content/uploads/2021/08/design-your-dream-home.jpg" alt={`Image ${listing.id}`} />
                             {/* Add columns of location, price, and rating */}
                             <p>{listing.title}</p>
