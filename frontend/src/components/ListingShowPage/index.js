@@ -6,19 +6,20 @@ import { fetchListing } from '../../store/listings';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 const ListingShow = () => {
-  const {listingId} = useParams();
+  const { listingId } = useParams();
   const dispatch = useDispatch();
-  useEffect( () => {
-    dispatch(fetchListing(listingId))
+
+  useEffect(() => {
+    dispatch(fetchListing(listingId));
   }, [dispatch, listingId]);
 
-const selectListingById = (state, listingId) => {
-  return Object.values(state.listings).find(listing => listing.id === listingId);
-};
+  const selectListingById = (state, listingId) => {
+    return Object.values(state.listings).find(listing => listing.id === listingId);
+  };
 
-const listing = useSelector(state => selectListingById(state, listingId));
+  const listing = useSelector(state => selectListingById(state, listingId));
 
-  return(
+  return (
     <div className="single-listing-show">
       <div className="single-listing-map">
         <Link to="/">Back to Listings Index</Link>

@@ -1,5 +1,3 @@
-import { Dispatch } from "react";
-
 export const RECEIVE_LISTINGS = 'RECEIVE_LISTINGS';
 export const RECEIVE_LISTING = 'RECEIVE_LISTING';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
@@ -9,12 +7,17 @@ export const receiveListings = listings => ({
   listings,
 });
 
-export const receiveListing = ({ listing, reviews, authors }) => ({
-  type: RECEIVE_LISTING,
-  listing,
-  reviews,
-  authors,
-});
+// export const receiveListing = ({ listing, reviews, authors }) => ({
+//   type: RECEIVE_LISTING,
+//   listing,
+//   reviews,
+//   authors,
+// });
+
+export const receiveListing = listing => ({
+    type: RECEIVE_LISTING,
+    listing
+  });
 
 export const receiveReview = ({ review, average_rating, author }) => ({
   type: RECEIVE_REVIEW,
@@ -54,7 +57,7 @@ export const fetchListings = () => async dispatch => {
 
     if (response.ok) {
         const fetchedListings = await response.json();
-    dispatch(receiveListings(fetchedListings));
+        dispatch(receiveListings(fetchedListings));
     }
 }
 
@@ -63,22 +66,23 @@ export const fetchListing = (id) => async dispatch => {
 
     if (response.ok) {
         const fetchedListing = await response.json();
-        console.log(fetchedListing);
-        // dispatch(receivePosts(fetchedPosts)); // same as dispatch(type: RECEIVE_POSTS key: fetchedPosts)
+        dispatch(receiveListing(fetchedListing));
     }
 }
 
 const listingsReducer = (state = {}, action) => {
-    Object.freeze(state)
+    let newState = {...state};
     switch(action.type) {
         case RECEIVE_LISTINGS:
             return action.listings;
         case RECEIVE_LISTING:
-            const newListing = { [action.listing.id]: action.listing };
-            return Object.assign({}, state, newListing);
+            newState[action.listing.id] = action.listing;
+            return newState;
+            // const newListing = { [action.listing.id]: action.listing };
+            // return Object.assign({}, state, newListing);
         case RECEIVE_REVIEW:
             const { review, average_rating } = action;
-            const newState = Object.assign({}, state);
+            // const newState = Object.assign({}, state);
             newState[review.listing_id].reviewIds.push(review.id);
             newState[review.listing_id].average_rating = average_rating;
             return newState;
