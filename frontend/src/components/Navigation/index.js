@@ -59,7 +59,7 @@ function Navigation() {
         {/* Replace the text "Profile" with the image */}
         <div className="menu-icon"></div>
         {/* Use the src attribute directly in the img tag */}
-        <img src="frontend/src/components/Navigation/bnb_icon.png" className="profile-pic" />
+        <i className="fa-solid fa-user-circle" style={{fontSize: "1.5rem"}}></i>
       </div>
       <div id='dropdown'>
         {/* Container for login and sign-up links */}
