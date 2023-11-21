@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
     has_many :reviews
-    belongs_to :user
+    # belongs_to :user
 
     # before_validation :ensure_session_token
     # attr_reader :password

@@ -34,7 +34,10 @@ const ListingShow = () => {
                 <h1 className="listing-title">{listing.title}</h1>
                 <p className="location">{listing.location}</p> {/* Moved location here */}
                 <p className="beds-baths">{listing.beds} beds | {listing.baths} baths</p>
-                <img className="listing-image" src={listing.imageUrl} alt="Listing" />
+                <img className="listing-image" src={listing.imageUrl1} alt="Listing" />
+                <img className="listing-image" src={listing.imageUrl2} alt="Listing" />
+                <img className="listing-image" src={listing.imageUrl3} alt="Listing" />
+                <img className="listing-image" src={listing.imageUrl4} alt="Listing" />
               </div>
             </>
           ) : (
