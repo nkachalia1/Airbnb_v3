@@ -2,29 +2,33 @@ ApplicationRecord.transaction do
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
     User.destroy_all
+    Listing.destroy_all
+    Review.destroy_all
 
     require "open-uri"
 
     # puts "Resetting primary keys..."
     # # For easy testing, so that after seeding, the first `User` has `id` of 1
-    # ApplicationRecord.connection.reset_pk_sequence!('users')
+    ApplicationRecord.connection.reset_pk_sequence!('users')
+    ApplicationRecord.connection.reset_pk_sequence!('listings')
+    ApplicationRecord.connection.reset_pk_sequence!('reviews')
 
-    # puts "Creating users..."
-    # # Create one user with an easy to remember username, email, and password:
-    # User.create!(
-    #   username: 'Demo-lition',
-    #   email: 'demo@user.io',
-    #   password: 'password'
-    # )
 
-    # # More users
-    # 11.times do
-    #   User.create!({
-    #     username: Faker::Internet.unique.username(specifier: 3),
-    #     email: Faker::Internet.unique.email,
-    #     password: 'password'
-    #   })
-    # end
+    # Create one user with an easy to remember username, email, and password:
+    User.create!(
+      username: 'Demo-lition',
+      email: 'demo@user.io',
+      password: 'password'
+    )
+
+    # More users
+    11.times do
+      User.create!({
+        username: Faker::Internet.unique.username(specifier: 3),
+        email: Faker::Internet.unique.email,
+        password: 'password'
+      })
+    end
 
     puts "Done!"
 
@@ -36,7 +40,7 @@ ApplicationRecord.transaction do
       baths: '2',
       location: 'New York',
       rating: '4.5',
-      image_url: 'https://airbnb-seeds.s3.amazonaws.com/1.jpeg'
+      image_url: 'https://airbnb-seeds.s3.amazonaws.com/1.jpeg',
     )
 
     Listing.create!(
@@ -158,6 +162,90 @@ ApplicationRecord.transaction do
       location: 'New York',
       rating: '4.5',
       image_url: 'https://airbnb-seeds.s3.amazonaws.com/12.jpeg'
+    )
+
+    Review.create!(
+      body: "this place is great!",
+      rating: 4,
+      listing_id: 1,
+      author_id: 2
+    )
+
+    Review.create!(
+      body: "this place is great!",
+      rating: 4,
+      listing_id: 1,
+      author_id: 2
+    )
+
+    Review.create!(
+      body: "this place is great!",
+      rating: 4,
+      listing_id: 1,
+      author_id: 2
+    )
+
+    Review.create!(
+      body: "this place is great!",
+      rating: 4,
+      listing_id: 1,
+      author_id: 2
+    )
+
+    Review.create!(
+      body: "this place is great!",
+      rating: 4,
+      listing_id: 1,
+      author_id: 2
+    )
+
+    Review.create!(
+      body: "this place is great!",
+      rating: 4,
+      listing_id: 1,
+      author_id: 2
+    )
+
+    Review.create!(
+      body: "this place is great!",
+      rating: 4,
+      listing_id: 1,
+      author_id: 2
+    )
+
+    Review.create!(
+      body: "this place is great!",
+      rating: 4,
+      listing_id: 1,
+      author_id: 2
+    )
+
+    Review.create!(
+      body: "this place is great!",
+      rating: 4,
+      listing_id: 1,
+      author_id: 2
+    )
+
+    Review.create!(
+      body: "this place is great!",
+      rating: 4,
+      listing_id: 1,
+      author_id: 2
+    )
+
+    Review.create!(
+      body: "this place is great!",
+      rating: 4,
+      listing_id: 1,
+      author_id: 2
+    )
+
+    Review.create!(
+      body: "this place is great!",
+      rating: 4,
+      listing_id: 1,
+      author_id: 2
     )
 
     # 11.times do

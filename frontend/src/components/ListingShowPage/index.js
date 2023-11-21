@@ -14,8 +14,11 @@ const ListingShow = () => {
     dispatch(fetchListing(listingId));
   }, [dispatch, listingId]);
 
+  const reviews = useSelector(state => Object.values(state.reviews || {}).filter(review => review.listing_id == listingId));
+
   const listing = useSelector(state => state.listings?.[listingId] || {});
 
+  debugger
   return (
     <div className="single-listing-show">
       <div className="single-listing-map">
@@ -28,6 +31,7 @@ const ListingShow = () => {
         <p>Location: {listing.location}</p>
         <p>Rating: {listing.rating}</p>
         <img style={{width: "150px"}} src={listing.image_url} alt="Listing" />
+        <p>Reviews: {reviews.map(review => review.body)} </p>
       </div>
     </div>
   );

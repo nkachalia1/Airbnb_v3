@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { fetchListing } from '../../actions/listing_actions';
+// import { fetchListing } from '../../actions/listing_actions';
 import { selectReviewsForListing, selectListing } from '../../reducers/selectors';
 import ListingShow from './listing_show';
 
