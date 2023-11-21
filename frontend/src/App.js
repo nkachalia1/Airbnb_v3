@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ListingShow from './components/ListingShowPage';
 import ListingForm from './components/ListingFormPage';
+import ReviewForm from './components/ReviewFormPage';
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
           <Route path="/listings/:Id" component={ListingShowContainer} /> */}
           <Route path="/listings/:listingId" component={ListingShow} />
           <Route path="/listings/new" component={ListingForm} />
+          <Route path="/reviews/new" component={ReviewForm} />
+
 
         </Switch>
     </>

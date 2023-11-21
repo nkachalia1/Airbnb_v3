@@ -14,9 +14,10 @@ export const receiveListings = listings => ({
 //   authors,
 // });
 
-export const receiveListing = listing => ({
+export const receiveListing = data => ({
     type: RECEIVE_LISTING,
-    listing
+    listing: data.listing,
+    reviews: data.reviews
   });
 
 export const receiveReview = ({ review, average_rating, author }) => ({
@@ -65,13 +66,13 @@ export const fetchListing = (id) => async dispatch => {
     const response = await fetch(`/api/listings/${id}`);
 
     if (response.ok) {
-        const fetchedListing = await response.json();
-        dispatch(receiveListing(fetchedListing));
+        const data = await response.json();
+        dispatch(receiveListing(data));
     }
 }
 
 const listingsReducer = (state = {}, action) => {
-    let newState = {...state};
+    const newState = {...state};
     switch(action.type) {
         case RECEIVE_LISTINGS:
             return action.listings;
@@ -80,12 +81,6 @@ const listingsReducer = (state = {}, action) => {
             return newState;
             // const newListing = { [action.listing.id]: action.listing };
             // return Object.assign({}, state, newListing);
-        case RECEIVE_REVIEW:
-            const { review, average_rating } = action;
-            // const newState = Object.assign({}, state);
-            newState[review.listing_id].reviewIds.push(review.id);
-            newState[review.listing_id].average_rating = average_rating;
-            return newState;
         default:
             return state;
     }

@@ -17,7 +17,9 @@ class Api::ListingsController < ApplicationController
     end
 
     def show
-        render json: @listing
+        @listing = Listing.find(params["id"])
+        @reviews = @listing.reviews
+        render :show
     end
 
     private
