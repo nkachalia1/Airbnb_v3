@@ -1,0 +1,89 @@
+.listing-show-container {
+  display: flex;
+  font-family: Arial, sans-serif;
+  width: 100%; /* Modify to take up the entire screen */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.back-link {
+  position: absolute;
+  top: 20px; /* Adjust this value to position it vertically */
+  left: 20px; /* Adjust this value to position it horizontally */
+  z-index: 1; /* Ensure it's above other elements */
+}
+
+.listing-details {
+  display: flex;
+  flex: 1;
+  border: 1px solid #DDD;
+  background-color: #FFF;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.listing-left {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.listing-right {
+  flex: 1;
+  padding: 20px;
+}
+
+
+.listing-header {
+  text-align: center;
+}
+
+.listing-image {
+  object-fit: cover;
+  margin-bottom: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  width: 600px;
+  height: 500px;
+}
+
+.listing-title {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.beds-baths {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.location {
+  font-weight: bold;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.rating {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.rating::after {
+  content: " ★★★★★";
+}
+
+.price {
+  margin-bottom: 10px;
+}
+
+.description h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.review-body {
+  margin-bottom: 5px;
+}

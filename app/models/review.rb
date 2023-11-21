@@ -1,7 +1,6 @@
 class Review < ApplicationRecord
-    validates :rating, inclusion: { in: (1..5) }
+  validates :rating, inclusion: { in: (1..5) }
 
-    belongs_to :listing
-    belongs_to :author,
-      class_name: :User
-  end
+  belongs_to :listing
+  belongs_to :author, class_name: 'User', foreign_key: 'author_id'
+end

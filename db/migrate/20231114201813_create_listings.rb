@@ -8,7 +8,10 @@ class CreateListings < ActiveRecord::Migration[7.0]
       t.float :baths, null: false
       t.string :location, null: false
       t.float :rating, null: false
-      t.string :image_url, null: false
+      t.string :image_url1, null: false
+      t.string :image_url2, null: false
+      t.string :image_url3, null: false
+      t.string :image_url4, null: false
       t.timestamps
     end
 

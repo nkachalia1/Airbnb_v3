@@ -40,7 +40,11 @@ ApplicationRecord.transaction do
       baths: 2,
       location: 'New York',
       rating: 4.5,
-      image_url: 'https://airbnb-seeds.s3.amazonaws.com/1.jpeg',
+      image_url1: 'https://airbnb-seeds.s3.amazonaws.com/1.jpeg',
+      image_url2: 'https://airbnb-seeds.s3.amazonaws.com/13.jpeg',
+      image_url3: 'https://airbnb-seeds.s3.amazonaws.com/18.jpeg',
+      image_url4: 'https://airbnb-seeds.s3.amazonaws.com/25.jpeg',
+
     )
 
     Listing.create!(
@@ -51,7 +55,10 @@ ApplicationRecord.transaction do
       baths: 2,
       location: 'Cape Town',
       rating: 4.7,
-      image_url: 'https://airbnb-seeds.s3.amazonaws.com/2.jpeg'
+      image_url1: 'https://airbnb-seeds.s3.amazonaws.com/2.jpeg',
+      image_url2: 'https://airbnb-seeds.s3.amazonaws.com/14.jpeg',
+      image_url3: 'https://airbnb-seeds.s3.amazonaws.com/19.jpeg',
+      image_url4: 'https://airbnb-seeds.s3.amazonaws.com/26.jpeg',
     )
 
     Listing.create!(
@@ -62,7 +69,10 @@ ApplicationRecord.transaction do
       baths: 4,
       location: 'Egypt',
       rating: 4.5,
-      image_url: 'https://airbnb-seeds.s3.amazonaws.com/3.jpeg'
+      image_url1: 'https://airbnb-seeds.s3.amazonaws.com/3.jpeg',
+      image_url2: 'https://airbnb-seeds.s3.amazonaws.com/15.jpeg',
+      image_url3: 'https://airbnb-seeds.s3.amazonaws.com/20.jpeg',
+      image_url4: 'https://airbnb-seeds.s3.amazonaws.com/27.jpeg',
     )
 
     Listing.create!(
@@ -73,7 +83,10 @@ ApplicationRecord.transaction do
       baths: 4,
       location: 'Moscow',
       rating: 4.9,
-      image_url: 'https://airbnb-seeds.s3.amazonaws.com/4.jpeg'
+      image_url1: 'https://airbnb-seeds.s3.amazonaws.com/4.jpeg',
+      image_url2: 'https://airbnb-seeds.s3.amazonaws.com/16.jpeg',
+      image_url3: 'https://airbnb-seeds.s3.amazonaws.com/21.jpeg',
+      image_url4: 'https://airbnb-seeds.s3.amazonaws.com/28.jpeg',
     )
 
     Listing.create!(
@@ -84,8 +97,10 @@ ApplicationRecord.transaction do
       baths: 6,
       location: 'Sydney',
       rating: 4.6,
-      image_url: 'https://airbnb-seeds.s3.amazonaws.com/5.jpeg'
-    )
+      image_url1: 'https://airbnb-seeds.s3.amazonaws.com/5.jpeg',
+      image_url2: 'https://airbnb-seeds.s3.amazonaws.com/16.jpeg',
+      image_url3: 'https://airbnb-seeds.s3.amazonaws.com/22.jpeg',
+      image_url4: 'https://airbnb-seeds.s3.amazonaws.com/29.jpeg',    )
 
     Listing.create!(
       title: 'Cliff Vista',
@@ -95,8 +110,10 @@ ApplicationRecord.transaction do
       baths: 2,
       location: 'Shanghai',
       rating: 4.2,
-      image_url: 'https://airbnb-seeds.s3.amazonaws.com/6.jpeg'
-    )
+      image_url1: 'https://airbnb-seeds.s3.amazonaws.com/6.jpeg',
+      image_url2: 'https://airbnb-seeds.s3.amazonaws.com/17.jpeg',
+      image_url3: 'https://airbnb-seeds.s3.amazonaws.com/23.jpeg',
+      image_url4: 'https://airbnb-seeds.s3.amazonaws.com/30.jpeg',    )
 
     Listing.create!(
       title: 'Turkish View',
@@ -106,8 +123,10 @@ ApplicationRecord.transaction do
       baths: 5,
       location: 'Istanbul',
       rating: 4.9,
-      image_url: 'https://airbnb-seeds.s3.amazonaws.com/7.jpeg'
-    )
+      image_url1: 'https://airbnb-seeds.s3.amazonaws.com/7.jpeg',
+      image_url2: 'https://airbnb-seeds.s3.amazonaws.com/18.jpeg',
+      image_url3: 'https://airbnb-seeds.s3.amazonaws.com/24.jpeg',
+      image_url4: 'https://airbnb-seeds.s3.amazonaws.com/31.jpeg',    )
 
     Listing.create!(
       title: 'Ski Resort',
@@ -117,8 +136,10 @@ ApplicationRecord.transaction do
       baths: 3,
       location: 'Germany',
       rating: 4.2,
-      image_url: 'https://airbnb-seeds.s3.amazonaws.com/8.jpeg'
-    )
+      image_url1: 'https://airbnb-seeds.s3.amazonaws.com/8.jpeg',
+      image_url2: 'https://airbnb-seeds.s3.amazonaws.com/19.jpeg',
+      image_url3: 'https://airbnb-seeds.s3.amazonaws.com/25.jpeg',
+      image_url4: 'https://airbnb-seeds.s3.amazonaws.com/32.jpeg',    )
 
     Listing.create!(
       title: 'Mountain Scene',
@@ -128,8 +149,10 @@ ApplicationRecord.transaction do
       baths: 4,
       location: 'Paris',
       rating: 4.8,
-      image_url: 'https://airbnb-seeds.s3.amazonaws.com/9.jpeg'
-    )
+      image_url1: 'https://airbnb-seeds.s3.amazonaws.com/9.jpeg',
+      image_url2: 'https://airbnb-seeds.s3.amazonaws.com/20.jpeg',
+      image_url3: 'https://airbnb-seeds.s3.amazonaws.com/26.jpeg',
+      image_url4: 'https://airbnb-seeds.s3.amazonaws.com/33.jpeg',    )
 
     Listing.create!(
       title: 'Water View',
@@ -139,8 +162,10 @@ ApplicationRecord.transaction do
       baths: 2,
       location: 'California',
       rating: 4.2,
-      image_url: 'https://airbnb-seeds.s3.amazonaws.com/10.jpeg'
-    )
+      image_url1: 'https://airbnb-seeds.s3.amazonaws.com/10.jpeg',
+      image_url2: 'https://airbnb-seeds.s3.amazonaws.com/21.jpeg',
+      image_url3: 'https://airbnb-seeds.s3.amazonaws.com/27.jpeg',
+      image_url4: 'https://airbnb-seeds.s3.amazonaws.com/34.jpeg',    )
 
     Listing.create!(
       title: 'Gothic House',
@@ -150,8 +175,10 @@ ApplicationRecord.transaction do
       baths: 3,
       location: 'San Francisco',
       rating: 4.5,
-      image_url: 'https://airbnb-seeds.s3.amazonaws.com/11.jpeg'
-    )
+      image_url1: 'https://airbnb-seeds.s3.amazonaws.com/11.jpeg',
+      image_url2: 'https://airbnb-seeds.s3.amazonaws.com/22.jpeg',
+      image_url3: 'https://airbnb-seeds.s3.amazonaws.com/28.jpeg',
+      image_url4: 'https://airbnb-seeds.s3.amazonaws.com/35.jpeg',    )
 
     Listing.create!(
       title: 'Historic Site',
@@ -161,91 +188,93 @@ ApplicationRecord.transaction do
       baths: 2,
       location: 'New York',
       rating: 4.5,
-      image_url: 'https://airbnb-seeds.s3.amazonaws.com/12.jpeg'
+      image_url1: 'https://airbnb-seeds.s3.amazonaws.com/12.jpeg',
+      image_url2: 'https://airbnb-seeds.s3.amazonaws.com/23.jpeg',
+      image_url3: 'https://airbnb-seeds.s3.amazonaws.com/29.jpeg',
+      image_url4: 'https://airbnb-seeds.s3.amazonaws.com/36.jpeg',    )
+
+    Review.create!(
+      body: "This place is great!",
+      rating: 4,
+      listing_id: 1,
+      author_id: 1
     )
 
     Review.create!(
-      body: "this place is great!",
+      body: "Really enjoyed the stay",
       rating: 4,
       listing_id: 1,
-      author_id: 2
+      author_id: 1
     )
 
     Review.create!(
-      body: "this place is great!",
+      body: "Had a great time!",
       rating: 4,
       listing_id: 1,
-      author_id: 2
+      author_id: 1
     )
 
     Review.create!(
-      body: "this place is great!",
+      body: "Would definitely come back",
       rating: 4,
       listing_id: 1,
-      author_id: 2
+      author_id: 1
     )
 
     Review.create!(
-      body: "this place is great!",
+      body: "Return next year!",
       rating: 4,
       listing_id: 1,
-      author_id: 2
+      author_id: 1
     )
 
     Review.create!(
-      body: "this place is great!",
+      body: "Enjoyed the game room!",
       rating: 4,
       listing_id: 1,
-      author_id: 2
+      author_id: 1
     )
 
     Review.create!(
-      body: "this place is great!",
+      body: "The hot tub was fantastic!",
       rating: 4,
       listing_id: 1,
-      author_id: 2
+      author_id: 1
     )
 
     Review.create!(
-      body: "this place is great!",
+      body: "Never coming back.",
       rating: 4,
       listing_id: 1,
-      author_id: 2
+      author_id: 1
     )
 
     Review.create!(
-      body: "this place is great!",
+      body: "I would come back again!",
       rating: 4,
       listing_id: 1,
-      author_id: 2
+      author_id: 1
     )
 
     Review.create!(
-      body: "this place is great!",
+      body: "Too hot!",
       rating: 4,
       listing_id: 1,
-      author_id: 2
+      author_id: 1
     )
 
     Review.create!(
-      body: "this place is great!",
+      body: "Great scenery",
       rating: 4,
       listing_id: 1,
-      author_id: 2
+      author_id: 1
     )
 
     Review.create!(
-      body: "this place is great!",
+      body: "Enjoyed the stay!",
       rating: 4,
       listing_id: 1,
-      author_id: 2
-    )
-
-    Review.create!(
-      body: "this place is great!",
-      rating: 4,
-      listing_id: 1,
-      author_id: 2
+      author_id: 1
     )
 
     # 11.times do

@@ -50,7 +50,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_21_145039) do
     t.float "baths", null: false
     t.string "location", null: false
     t.float "rating", null: false
-    t.string "image_url", null: false
+    t.string "image_url1", null: false
+    t.string "image_url2", null: false
+    t.string "image_url3", null: false
+    t.string "image_url4", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["title"], name: "index_listings_on_title", unique: true
