@@ -36,7 +36,7 @@ ApplicationRecord.transaction do
 
     Listing.create!(
       title: 'Townhouse',
-      description: 'Great townhouse located near the water',
+      description: 'Renovated studio cottage with scenic views, cathedral ceilings, new bathrooms, equipped kitchen, movie projector, high-speed wifi.',
       price: 100,
       beds: 2,
       baths: 2,
@@ -51,7 +51,7 @@ ApplicationRecord.transaction do
 
     Listing.create!(
       title: 'Ranch',
-      description: 'Fantastic ranch overlooking the city',
+      description: 'Hillside retreat with panoramic views, skylights, gourmet kitchen, outdoor fire pit. Close to ski slopes (10 mins) and downtown (15 mins).',
       price: 200,
       beds: 2,
       baths: 2,
@@ -65,7 +65,7 @@ ApplicationRecord.transaction do
 
     Listing.create!(
       title: 'Guest House',
-      description: 'Come see the pyramids',
+      description: 'Beachfront studio with ocean vistas, vaulted ceilings, spa-like baths, private deck.',
       price: 800,
       beds: 6,
       baths: 4,
@@ -79,7 +79,7 @@ ApplicationRecord.transaction do
 
     Listing.create!(
       title: 'Sunny View',
-      description: 'Amazing sunsets daily',
+      description: 'Countryside cottage boasting vineyard views, beamed ceilings, wineries (10 mins) and downtown Yountville',
       price: 700,
       beds: 6,
       baths: 4,
@@ -93,7 +93,7 @@ ApplicationRecord.transaction do
 
     Listing.create!(
       title: 'Ocean View',
-      description: 'Beaches and sunshine every day',
+      description: 'City loft with skyline views, modern baths, rooftop terrace. Easy access to downtown (5 mins) and Wicker Park',
       price: 1200,
       beds: 7,
       baths: 6,
@@ -106,7 +106,7 @@ ApplicationRecord.transaction do
 
     Listing.create!(
       title: 'Cliff Vista',
-      description: 'Come for the hiking. Stay for the views.',
+      description: 'Mountain cabin with forest panoramas, rustic baths, hot tub. Close to ski resorts (10 mins) and Main Street (5 mins)',
       price: 200,
       beds: 1,
       baths: 2,
@@ -119,7 +119,7 @@ ApplicationRecord.transaction do
 
     Listing.create!(
       title: 'Turkish View',
-      description: 'Excellent proximity to local shops',
+      description: 'Lakeside retreat featuring lakefront views, cathedral ceilings, outdoor kitchen. Quick drives to marinas (5 mins) and downtown Bracebridge (15 mins)',
       price: 1000,
       beds: 6,
       baths: 5,
@@ -132,7 +132,7 @@ ApplicationRecord.transaction do
 
     Listing.create!(
       title: 'Ski Resort',
-      description: 'Come for the skiing. Stay for the warmth.',
+      description: 'Desert oasis boasting canyon vistas, lavish baths, private pool. Proximity to hiking trails (10 mins) and downtown (20 mins)',
       price: 300,
       beds: 2,
       baths: 3,
@@ -145,7 +145,7 @@ ApplicationRecord.transaction do
 
     Listing.create!(
       title: 'Mountain Scene',
-      description: 'Water, hikes, and skiing, all at your fingertips',
+      description: 'Coastal bungalow with bay views, beach-style baths, outdoor shower. Near beaches (5 mins) and Duval Street (10 mins)',
       price: 800,
       beds: 6,
       baths: 4,
@@ -158,7 +158,7 @@ ApplicationRecord.transaction do
 
     Listing.create!(
       title: 'Water View',
-      description: 'Enjoy this amazing home near the ocean',
+      description: 'Lakeside cabin nestled amidst woodland views, renovated baths, lakeside dock. Close to shores (5 mins) and downtown Tahoe City',
       price: 700,
       beds: 5,
       baths: 2,
@@ -171,7 +171,7 @@ ApplicationRecord.transaction do
 
     Listing.create!(
       title: 'Gothic House',
-      description: 'Historial site with intricate architecture',
+      description: 'Hilltop villa with valley views, Mediterranean baths, private pool. Quick drives to wineries (10 mins) and Florence (45 mins).',
       price: 100,
       beds: 2,
       baths: 3,
@@ -184,7 +184,7 @@ ApplicationRecord.transaction do
 
     Listing.create!(
       title: 'Historic Site',
-      description: 'Best place for the sights and sounds of NY',
+      description: 'Countryside manor with rolling hill views, grand ceilings, extensive gardens. Close to the villages (5 mins) and Oxford (30 mins).',
       price: 490,
       beds: 2,
       baths: 2,
