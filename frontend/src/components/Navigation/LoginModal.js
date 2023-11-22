@@ -1,14 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
+import './LoginModal.css';
 
 const LoginModal = ({ isOpen, onClose }) => {
+    const modalRef = useRef(null);
 
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
     const [credential, setCredential] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
+
+    const handleCloseModal = (e) => {
+        if (modalRef.current && !modalRef.current.contains(e.target)) {
+            onClose();
+        }
+    };
+
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+            if (isOpen && modalRef.current && !modalRef.current.contains(e.target)) {
+                onClose();
+            }
+        };
+
+        if (isOpen) {
+            document.addEventListener('mousedown', handleOutsideClick);
+        } else {
+            document.removeEventListener('mousedown', handleOutsideClick);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleOutsideClick);
+        };
+    }, [isOpen, onClose]);
 
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -29,45 +55,44 @@ const LoginModal = ({ isOpen, onClose }) => {
     }
 
     if (!isOpen) {
-        return null; // Don't render anything if the modal is closed
+        return null;
     }
 
     return (
-      <div className="modal-container">
-          <div className="modal">
-              <div className="modal-content">
-                  <div className='modalHeader'>
-                      <button onClick={onClose}>X</button>
-                      Login or Sign Up
-                  </div>
-                  <form className='authForm' onSubmit={handleSubmit}>
-                      <ul className="error-list">
-                          {errors.map(error => <li key={error}>{error}</li>)}
-                      </ul>
-                      <label className="input-label">
-                          Username or Email
-                          <input
-                              type="text"
-                              value={credential}
-                              onChange={(e) => setCredential(e.target.value)}
-                              required
-                          />
-                      </label>
-                      <label className="input-label">
-                          Password
-                          <input
-                              type="password"
-                              value={password}
-                              onChange={(e) => setPassword(e.target.value)}
-                              required
-                          />
-                      </label>
-                      <button type="submit" className="login-button">Log In</button>
-                  </form>
-              </div>
-          </div>
-      </div>
-  );
+        <div className="modal-container">
+            <div className="modal" ref={modalRef}>
+                <div className="modal-content">
+                    <form className='authForm' onSubmit={handleSubmit}>
+                        <ul className="error-list">
+                            {errors.map(error => <li key={error}>{error}</li>)}
+                        </ul>
+                    <div className='modalHeader'>
+                        <button onClick={onClose}>X</button>
+                    </div>
+                        <label className="input-label">
+                            Username or Email
+                            <input
+                                type="text"
+                                value={credential}
+                                onChange={(e) => setCredential(e.target.value)}
+                                required
+                            />
+                        </label>
+                        <label className="input-label">
+                            Password
+                            <input
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </label>
+                        <button type="submit" className="login-button">Log In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    );
 
   };
 

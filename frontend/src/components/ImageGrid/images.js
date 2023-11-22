@@ -39,7 +39,7 @@ function ImageGrid() {
                     <div className="title-and-rating">
                       <p className="title">{listing.title}</p>
                       <p className="rating">
-                        {listing.rating} <span className="star">★</span>
+                        {listing.rating} <span className="star"></span>
                       </p>
                     </div>
                     <p className="location">{listing.location}</p>

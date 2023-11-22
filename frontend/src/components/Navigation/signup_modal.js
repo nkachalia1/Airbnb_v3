@@ -1,23 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import './Navigation.css';
 import * as sessionActions from '../../store/session';
-import './LoginForm.css';
+import './LoginModal.css';
 
 const SignUpModal = ({ isOpen, onClose }) => {
+    const modalRef = useRef(null);
 
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
-    const [email, setEmail] = useState("");
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
+    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+
     const [errors, setErrors] = useState([]);
+
+    const handleCloseModal = (e) => {
+        if (modalRef.current && !modalRef.current.contains(e.target)) {
+            onClose();
+        }
+    };
+
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+            if (isOpen && modalRef.current && !modalRef.current.contains(e.target)) {
+                onClose();
+            }
+        };
+
+        if (isOpen) {
+            document.addEventListener('mousedown', handleOutsideClick);
+        } else {
+            document.removeEventListener('mousedown', handleOutsideClick);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleOutsideClick);
+        };
+    }, [isOpen, onClose]);
 
     const handleSubmit = (e) => {
       e.preventDefault();
       setErrors([]);
-      return dispatch(sessionActions.signup({ username, email, password }))
+      return dispatch(sessionActions.login({ email, username, password }))
         .catch(async (res) => {
           let data;
           try {
@@ -33,64 +58,63 @@ const SignUpModal = ({ isOpen, onClose }) => {
     }
 
     if (!isOpen) {
-        return null; // Don't render anything if the modal is closed
+        return null;
     }
 
     return (
-        <div className="modal">
-        <div className="modal-content">
-            <div className='modalHeader'>
-                <button onClick={onClose}>X</button>
-                Login or Sign Up
+        <div className="modal-container">
+            <div className="modal" ref={modalRef}>
+                <div className="modal-content">
+                    <form className='authForm' onSubmit={handleSubmit}>
+                        <ul className="error-list">
+                            {errors.map(error => <li key={error}>{error}</li>)}
+                        </ul>
+                    <div className='modalHeader'>
+                        <button onClick={onClose}>X</button>
+                    </div>
+                        <label className="input-label">
+                            Email
+                            <input
+                                type="text"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                        </label>
+                        <label className="input-label">
+                            Username
+                            <input
+                                type="text"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                required
+                            />
+                        </label>
+                        <label className="input-label">
+                            Password
+                            <input
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </label>
+                        <label className="input-label">
+                            Confirm Password
+                            <input
+                                type="password"
+                                value={confirmPassword}
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                                required
+                            />
+                        </label>
+                        <button type="submit" className="login-button">Sign Up</button>
+                    </form>
+                </div>
             </div>
-            <form onSubmit={handleSubmit}>
-                <ul>
-                    {errors.map(error => <li key={error}>{error}</li>)}
-                </ul>
-                <label>
-                    Email
-                    <input
-                    type="text"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    />
-                </label>
-                <label>
-                    Username
-                    <input
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    required
-                    />
-                </label>
-                <label>
-                    Password
-                    <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                    />
-                </label>
-                <label>
-                    Confirm Password
-                    <input
-                    type="password"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    required
-                    />
-                </label>
-                <button type="submit">Sign Up</button>
-            </form>
         </div>
-      </div>
-
-
     );
-  };
 
+  };
 
 export default SignUpModal;
